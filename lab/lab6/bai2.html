@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: auto;
+        }
+
+        .cotain {
+            width: 300px;
+            display: flex;
+        }
+
+        .box {     
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            line-height: 95px;
+            font-size: 50px;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            background-color: whitesmoke;
+            cursor: pointer;
+            user-select: none;
+        }
+        /* .box:hover
+        {
+           transform: scale(1.1)
+        } */
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var i = 0;
+        var d1 = 0;
+        var d2 =0;
+        function mark(vt) {
+            let b = document.getElementsByClassName('box');
+            console.log(b);
+            i++
+            console.log(i);
+            // console.log(i);
+            if(i%2 == 0)
+            {
+                // console.log(b[vt]);
+                b[vt].style.backgroundColor = 'yellow';
+                b[vt].innerHTML = 'x'
+                b[vt].setAttribute('onclick','');
+                // d1++;
+
+                // console.log(d1);
+            }
+            else
+            {
+                // console.log(b[vt]);
+                b[vt].style.backgroundColor = 'blue';
+                b[vt].innerHTML = 'o'
+                b[vt].setAttribute('onclick','');
+                // d2++;
+                // console.log(d2);
+            }
+            // if(d1 == 3)
+            // {
+            //  location.reload();
+            // }
+            // if(d2 == 3)
+            // {
+            //  location.reload();
+            // }
+            if(i == 8)
+            {
+                alert('Game over');
+                location.reload();
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">
+        Siêu kì thủ 
+    <div class="cotain">
+        <div class="box" onclick="mark(0)"></div>
+        <div class="box" onclick="mark(1)"></div>
+        <div class="box" onclick="mark(2)"></div>
+    </div>
+    <div class="cotain">
+        <div class="box" onclick="mark(3)"></div>
+        <div class="box" onclick="mark(4)"></div>
+        <div class="box" onclick="mark(5)"></div>
+    </div>
+    <div class="cotain">
+        <div class="box" onclick="mark(6)"></div>
+        <div class="box" onclick="mark(7)"></div>
+        <div class="box" onclick="mark(8)"></div>
+    </div>
+</body>
+
+</html>

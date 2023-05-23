@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Thông tin nhân viên ăn trộm quần lót</h2>
+        <form action="">
+            <div class="form-group">
+                <label for="name">Tên nhân viên</label>
+                <input type="text" id="name">
+            </div>
+            <div class="form-group">
+                <label for="age">Tuổi</label>
+                <input type="number" id="age">
+            </div>
+            <div class="form-group">
+                <label for="age">Loại quần lót</label>
+                <select name="" id="quanLot">
+                    <option value="0" hidden selected>Chọn loại quân lót</option>
+                    <option value="1" type="chuaGiat">Quần lót chưa gặt</option>
+                    <option value="2" type="mauLon">Quần lót dính máu lồn</option>
+                    <option value="2" type="nuocDai">Quần lót dính nước đái</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <span>Quần lót của</span>
+                <input type="radio" name="loaiQuanLot" loai="quanLotNam">
+                <label for="loaiQuanLot">Nam</label>
+                <input type="radio" name="loaiQuanLot" loai="quanLotNu">
+                <label for="loaiQuanLot">Nữ</label>
+            </div>
+        </form>
+        <button id="sex">Hiện thông tin thằng bỉ ổi</button>
+    </div>
+    <script>
+        document.querySelector('#sex').addEventListener('click',function() {
+            console.log(document.querySelector('input[name="loaiQuanLot"]:checked'));
+            console.log(document.getElementById('quanLot').options[document.getElementById('quanLot').selectedIndex].getAttribute('type'));
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function add(btn) {
+            let row = btn.parentElement.parentElement.cloneNode(true);
+            console.log(row);
+            let delBtn = row.getElementsByTagName('button')[0];
+            console.log(delBtn);
+            delBtn.innerText = "Del";
+            delBtn.setAttribute('onclick', 'del(this)');
+            document.getElementById('cart').appendChild(row);
+            Amout();
+        }
+        function del(btn) {
+            let row = btn.parentElement.parentElement;
+            console.log(row);
+            document.getElementById('cart').removeChild(row);
+            Amout();
+        }
+        function Amout() {
+            let cart = document.getElementById('cart');
+            var rows = cart.getElementsByTagName('tr');
+            // console.log(rows)
+            // console.log(rows.length);
+            let sum = 0;
+            for (let i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var price = cells[1].innerText.replace('$', '');
+                // console.log(price);
+                sum += Number(price);
+            }
+            // console.log(sum);
+            let out = document.getElementById('Amout');
+            out.innerText = sum + '$';
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">Giỏ hàng
+        <tr>
+            <td>i Pỏn 9</td>
+            <td>2700$</td>
+            <td><button onclick="add(this)">add</button></td>
+        </tr>
+        <tr>
+            <td>i Pỏn 8</td>
+            <td>2400$</td>
+            <td><button onclick="add(this)">add</button></td>
+        </tr>
+    </table>
+    <br>
+    <table id="cart" border="1"> Cart
+
+    </table>
+    <h3>Amout <span id="Amout"></span></h3>
+</body>
+
+</html>

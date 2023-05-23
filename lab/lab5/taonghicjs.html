@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0px ;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-bottom: 2px;
+        }
+        #chi{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+    <script>
+        function testFunction(box) {
+          for(var i = 1 ; i<=2;i++){
+            let b = box.cloneNode(true);    //tạo ra thêm một node không ảnh hưởng đến node khác
+            // console.log(typeof(b));
+            b.setAttribute('onclick','del(this)');
+            let c = document.getElementById('chi');
+            c.appendChild(b);
+            count();          
+          }
+        }
+        function del(box) {
+            let b = box;
+            document.getElementById('chi').removeChild(b);
+            count();
+        }
+        function count() {
+            let b = document.getElementById('chi');
+            // console.log(typeof(b));
+            let c = b.getElementsByClassName('box'); //c là một object có chứa các box
+            // console.log(typeof(c));
+            console.log(c);
+            }
+    </script>   
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" onclick="testFunction(this)"></div>
+    <div id="chi">
+    </div>
+</body>
+</html>

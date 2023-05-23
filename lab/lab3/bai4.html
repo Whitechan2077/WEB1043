@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function compare(index) {
+        let c = Math.floor(Math.random()*3);
+        let arr = ['keo','bua','bao'];
+        console.log('may'+arr[c]);
+        console.log('nguoi'+arr[index]);
+       if (arr[c] == arr[index])
+       {
+         alert('hoa');
+       }
+       if (arr[c] == 'bua' &&  arr[index] == 'bao') {
+         alert('máy thua');
+       }
+       if (arr[c] == 'bao' &&  arr[index] == 'bua') {
+         alert('bạn thua');
+       }
+       if (arr[c] == 'keo' &&  arr[index] == 'bao') {
+         alert('bạn thua');
+       }
+       if (arr[c] == 'bao' &&  arr[index] == 'keo') {
+         alert('bạn thang');
+       }
+       if (arr[c] == 'bua' &&  arr[index] == 'keo') {
+         alert('máy thắng');
+       }
+       if (arr[c] == 'keo' &&  arr[index] == 'bua') {
+         alert('máy thua');
+       }
+       }
+    </script>
+</head>
+<body>
+    <button onclick="compare(0)">Khéo</button>
+    <button onclick="compare(1)">Búa</button>
+    <button onclick="compare(2)">Bao</button>
+</body>
+</html>

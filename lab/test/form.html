@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nhom-bang">
+        <label for="tenSp">Tên sản phẩm</label>
+        <input type="text" placeholder="Tên Sản phẩm" id="tenSp">
+    </div>
+    <div class="nhom-bang">
+        <label for="maSp">Mã Sản Phẩm</label>
+        <input type="text" placeholder="Mã Sản phẩm" id="maSp">
+    </div>
+    <div class="nhom-bang">
+        <label for="Loai">Mời Chọn Loại</label>
+        <select name="loaiSp" id="loaisp">
+            <option value="0" hidden selected>Mời chọn loái</option>
+            <option value="10000" >Loại 1</option>
+            <option value="20000" >Loại 2</option>
+            <option value="30000" >Loại 3</option>
+        </select>
+    </div>
+    <div class="nhom-bang">
+        <label for="soLuong">Số lượng</label>
+        <input type="number" placeholder="Mã Sản phẩm" id="soLuong">
+    </div>
+    <div class="nhom-bang">
+        <h3>Nhà Sản Xuât</h3>
+        <label for="NSX">Nhà Sản Xuất A</label>
+
+        <input type="radio" name="NSX" id="nsxA" >
+
+        <label for="NSX">Nhà Sản Xuất B</label>
+
+        <input type="radio" name="NSX" id="nsxB" >
+    </div>
+    <div class="nhom-bang">
+        <label for="tongThanhTien">Tổng</label>
+        <input type="number" placeholder="Tổng" id="tongThanhTien" readonly>
+    </div>
+    <button id="nhap">NHập</button>
+    <script>
+        let nutNhap = document.getElementById('nhap');
+        nutNhap.addEventListener('click',function () {
+
+
+
+             let tenSP = document.getElementById('tenSp').value
+             if (tenSP =="") {
+                alert('Chua nhap san pham')
+             }
+
+             let maSp = document.getElementById('maSp').value;
+             if (maSp == "") {
+                alert('Chua Nhap ma san Pham');
+             }
+        });
+        // let tong = document.getElementById('tongThanhTien');
+        //tong ="";
+        let loaiSp = document.getElementById('loaisp');
+        loaiSp.addEventListener('change',function () {
+            let tong = document.getElementById('tongThanhTien');
+            let soluong = document.getElementById('soLuong');
+
+            tong.value = Number(loaiSp.value) * Number(soluong.value)      
+        })
+    </script>
+</body>
+</html>

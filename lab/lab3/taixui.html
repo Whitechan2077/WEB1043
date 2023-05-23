@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            margin: 0 auto;
+            padding: 0;
+            width: 978px;
+        }
+        .container {
+            text-align: center;
+            height: 200px;
+            border: 1px solid black;
+            background-image: url(ganyu-birthday-art-genshinimpact.jpg);
+            background-size: 100%;
+        }
+
+        img {
+            margin: 20px;
+            user-select: none;
+        }
+        img:hover
+        {
+            transform: scale(1.5);
+        }
+
+        .info {
+            width: 50%;
+            text-align: center;
+        }
+
+        .container2 {
+            margin: auto;
+            display: flex;
+        }
+
+        .player {
+            width: 50%;
+            text-align: center;
+        }
+
+        .btn {
+            text-align: center;
+        }
+
+        .ccontainer {
+            position: relative;
+        }
+
+        .dish {
+            position: absolute;
+            left: 500px;
+            width: 500px;
+            height: 200px;
+            background-color: white;
+            display: block;
+        }
+    </style>
+    <script src="taiXiu.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <div class="dish"></div>
+            <img id="ss1" src="" alt="">
+            <img id="ss2" src="" alt="">
+            <img id="ss3" src="" alt="">
+        </div>
+        <h3>Số Dư : <span id="so-du">500000</span></h3>
+        <div class="container2">
+            <h3>Kết Quả: <span id="showresult"></span></h3>
+            </div>
+            <div class="btn">
+                <button id="gieo" onclick="random()">Gieo</button>
+                <button onclick="newRound()">Phiên mới</button>
+            </div>
+            <h3>Đặt cược</h3>
+            <div class="bet1">
+                <button class="bet" onclick="betValue(0)">50.000</button>
+                <button class="bet" onclick="betValue(1)">100.000</button>
+                <button class="bet" onclick="betValue(2)">200.000</button>
+                <button class="bet" onclick="betValue(3)">300.000</button>
+                <button class="bet" onclick="betValue(4)">400.000</button>
+                <button class="bet" onclick="betValue(5)">500.000</button>
+            </div>
+            <h3>Chọn Tài hay Xỉu</h3>
+            <div class="btn2">
+                <button class="choise" onclick="playerChoise('Tài')">Tài</button>
+                <button class="choise" onclick="playerChoise('Xỉu')">Xỉu</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

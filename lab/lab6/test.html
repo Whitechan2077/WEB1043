@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            width: 80%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .item{
+            display: flex;
+            
+        }
+        button{
+            width: 30px;
+            height: 40px;
+        }
+        .value{
+            width: 50px;
+            height: 40px;
+            background-color: blue;
+        }
+    </style>
+    <script>
+        var d = 0;
+        var d2 = 0;
+        var d3 =0;
+        function cartAdd (index) {
+          if (index == 0) {
+            let c = document.getElementsByClassName('value')[index];
+            console.log(c);
+            d++;
+            c.innerHTML = d;
+          }
+          if (index == 1) {
+            let c = document.getElementsByClassName('value')[index];
+            console.log(c);
+            d2++;
+            c.innerHTML = d2;
+          }
+          if (index == 2) {
+            let c = document.getElementsByClassName('value')[index];
+            console.log(c);
+            d3++;
+            c.innerHTML = d3;
+          }
+          
+        }
+        function cartDell(index) {
+           if (index == 0) {
+            let c = document.getElementsByClassName('value')[index];
+            console.log(c);
+            d--;
+            c.innerHTML = d;
+           }
+           if (index == 1) {
+            let c = document.getElementsByClassName('value')[index];
+            console.log(c);
+            d2--;
+            c.innerHTML = d2;
+           }
+           if (index == 2) {
+            let c = document.getElementsByClassName('value')[index];
+            console.log(c);
+            d3--;
+            c.innerHTML = d3;
+           }
+        }
+    </script>
+    <div class="container">
+        <div class="item">
+            <h1>Item1</h1>
+            <button class="form-control" onclick="cartAdd(0)">+</button>
+            <div class="value"></div>
+            <button onclick="cartDell(0)">-</button>
+        </div>
+        <div class="item">
+            <h1>Item2</h1>
+            <button class="form-control" onclick="cartAdd(1)">+</button>
+            <div class="value"></div>
+            <button onclick="cartDell(1)">-</button>
+        </div>
+        <div class="item">
+            <h1>Item3</h1>
+            <button class="form-control" onclick="cartAdd(2)">+</button>
+            <div class="value"></div>
+            <button onclick="cartDell(2)">-</button>
+        </div>
+    </div>
+</body>
+</html>

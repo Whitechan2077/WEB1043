@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="email">
+    <div id="check"></div>
+    <script>
+        document.getElementById('email').addEventListener('keyup',function() {
+            if (/[a-zA-z0-9]{5}/.test(document.getElementById('email').value) == false) {
+                document.getElementById('check').innerText="sai"
+            }
+            else document.getElementById('check').innerText=""
+            if (document.getElementById('email').value.trim() == "") {
+                document.getElementById('check').innerText="Trong ban "
+            }
+        });
+    </script>
+</body>
+</html>

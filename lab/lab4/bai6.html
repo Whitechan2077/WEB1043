@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+let item1 = {
+    tenSP : 'Khoai tây',
+    giaSP: 3000
+}
+let item2 = {
+    tenSP : 'Rau muống',
+    giaSP: 2000
+}
+let item3 = {
+    tenSP : 'Bánh mỳ kẹp thịt',
+    giaSP: 10000
+}
+let arr = [];
+arr.push(item1, item2, item3);
+    for(let i = 0 ; i < arr.length-1 ; i++){
+        for(let j = i+1 ; j<arr.length;j++){
+            if (arr[i].giaSP>arr[j].giaSP) {
+                let temp = arr[i].giaSP;
+                arr[i].giaSP = arr[j].giaSP;
+                arr[j].giaSP = temp;
+            }
+        }
+    }
+let UI ="";
+arr.forEach(function(item,index) {
+    UI+=`
+    <h3>Ten san pham:${item.tenSP}<h3>
+    <p>Gia San pham :${item.giaSP}<p>
+    <hr>
+    `;
+    console.log(index);
+});
+document.write(UI)
+</script>
+<body>
+    <div id="lmao">
+    </div>
+</body>
+</html>

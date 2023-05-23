@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container
+        {
+            width: 978px;
+            margin: 0 auto;
+            padding: 0px;
+            display: flex;
+            justify-content:space-around ;
+        }
+        .box
+        {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        let testArr=[];
+        function test() {
+            let c = document.querySelector('.box');
+            c.setAttribute('onclick','');
+            testArr.push(c);
+            console.log(testArr);;
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box " onclick="test()" ></div>
+        <div class="box" onclick="test()"></div>
+        <div class="box" onclick="test()"></div>
+        <div class="box" onclick="test()"></div>
+    </div>
+</body>
+</html>

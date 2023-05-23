@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div class="item">
+            <label for="nameSP">Tên sản phẩm</label>
+            <input type="text" placeholder="Tên sản phẩm" id="nameSP">
+        </div>
+        <div class="item">
+            <label for="maSP">Mã sản phẩm</label>
+            <input type="text" placeholder="Mã sản phẩm" id="maSP">
+        </div>
+        <div class="item">
+            <label for="typeSP">Loại sản phẩm</label>
+            <select name="" id="typeSP">
+                <option value="0" price="0" hidden selected>Chọn loại</option>
+                <option value="10000">Loại 1</option>
+                <option value="20000">Loại 2</option>
+                <option value="30000">Loại 3</option>
+            </select>
+        </div>
+        <div class="item">
+            <label for="giaSP">Số lượng</label>
+            <input type="number" placeholder="Giá sản phẩm" id="giaSP">
+        </div>
+        <div class="item">
+            <span>Nhà sản xuất sản phẩm</span>
+            <input type="radio" id="nsxA" value="nsxA" name="nsx">
+            <label for="nsxA">Nhà sản xuất A</label>
+            <input type="radio" id="nsxB" value="nsxB" name="nsx">
+            <label for="nsxB">Nhà sản xuất B</label>
+        </div>
+        <div class="item">
+            <label for="tong">Tong gia san pham</label>
+            <input type="text" id="tong" readonly>
+        </div>
+        <input type="button" name="" id="btnNhap" value="Nhập sản phẩm ">
+        <input type="button" name="" id="btnHienThi" value="Hiển thị sản phẩm ">
+    </form>
+    <br />
+    <div class="block-show">
+        <!-- Nội dung hiển thị sản phẩm ở đây viết bên JS -->
+        <!-- <h3>Tên sản phẩm: tên</h3>
+        <p>Mã sản phẩm: giá</p>
+        <p>Loại sản phẩm: giá</p>
+        <p>Giá sản phẩm: giá</p>
+        <p>Nhà sản xuất: giá</p> -->
+    </div>
+
+</body>
+<Script>
+    let arr = [];
+    function Product(productName, productID, type, price, nhaSX,sum) {
+        this.productName = productName;
+        this.productID = productID;
+        this.type = type;
+        this.price = price;
+        this.nhaSX = nhaSX;
+        this.sum = sum;
+    }
+    let add = document.getElementById('btnNhap');
+    add.addEventListener("click", function () {
+        if ((document.getElementById('nameSP').value.trim() == "") ||
+            (document.getElementById('maSP').value.trim() == "") || (document.getElementById('typeSP').value == 0) ||
+            (document.getElementById('giaSP').value == " ") || (document.querySelector('input[name="nsx"]').checked == false)) {
+            alert('khong dc de trong');
+        }
+        else {
+            let pd = new Product();
+            pd.productName = document.getElementById('nameSP').value;
+            pd.productID = document.getElementById('maSP').value;
+            pd.type = document.getElementById('typeSP').value;
+            pd.price = document.getElementById('giaSP').value;
+            pd.nhaSX = document.querySelector('input[name="nsx"]:checked').value;
+            pd.sum = document.getElementById('tong').value;
+            arr.push(pd);
+            console.log(arr);
+            document.getElementById('nameSP').value = "";
+            document.getElementById('maSP').value = "";
+            document.getElementById('typeSP').value = 0;
+            document.getElementById('giaSP').value = "";
+            document.querySelector('input[name="nsx"]').checked = false;
+            document.getElementById('tong').value = 0;
+        }
+    });
+
+
+    let typeSP = document.getElementById('typeSP');
+    let pdPriceInput = document.getElementById('giaSP');
+
+    typeSP.addEventListener('change', function () {
+        let pdPrice = Number(pdPriceInput.value);
+        let price = Number(typeSP.getAttribute('price'));
+        let total = price + pdPrice;
+        document.getElementById('tong').value = total;
+    });
+
+    document.getElementById('giaSP').addEventListener('input',function () {
+        let pdPrice = Number(pdPriceInput.value);
+        let price = Number(typeSP.value);
+        let total = price * pdPrice;
+        document.getElementById('tong').value = total;
+    })
+
+    let UI = "";
+    document.getElementById('btnHienThi').addEventListener("click", function () {
+        if (arr.length == 0) {
+            alert('chua co san pham')
+        }
+        else {
+            arr.forEach(function (item, index) {
+                UI += `
+                    <h3>Ten ${item.productName}<h3>
+                    <h3>ID ${item.productID}<h3> 
+                    <h3>Type ${item.type}<h3>
+                    <h3>Amout ${item.price}<h3>
+                    <h3>Nha San xuat ${item.nhaSX}<h3>
+                    <h3>Tong ${item.sum}<h3>
+                    <hr>                     
+                    `
+                console.log(item)
+            });
+            let show = document.getElementsByClassName('block-show')[0].innerHTML = UI;
+            UI = "";
+        }
+    });
+</Script>
+
+</html>

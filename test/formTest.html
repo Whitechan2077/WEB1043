@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <div class="form-group">
+                <label for="tenKhachHang">Ten khach hang</label>
+                <input type="text" id="name">
+                <div class="check" id="check1"></div>
+            </div>
+            <div class="form-group">
+                <label for="laoiHang">Loai hang</label>
+                <select name="loaiHang" id="loaiHang">
+                    <option value="0" hidden selected>--chon loai hang</option>
+                    <option value="600000">Loai 1</option>
+                    <option value="400000">Loai 2</option>
+                    <option value="200000">Loai 3</option>
+                </select>
+                <div class="check" id="check2"></div>
+            </div>
+            <div class="form-group">
+                <label for="donGia">Don gia</label>
+                <input type="text" id="donGia" readonly>
+            </div>
+            <div class="form-group">
+                <label for="tenKhachHang">So Luong</label>
+                <input type="number" id="soLuong">
+                <div class="check" id="check3"></div>
+            </div>
+            <div class="form-group">
+                <label for="tenKhachHang">Thanh Tien</label>
+                <input type="text" id="tong" readonly>
+            </div>
+            <div class="form-group">
+                <label for="noiNhanHang">Noi nhan</label>
+                <input type="radio" name="noiNhan" id="noiThanh" value="30000">
+                <label for="noiNhanHang">Noi thanh</label>
+                <input type="radio" name="noiNhan" id="ngoaiThanh" value="60000">
+                <label for="noiNhanHang">Ngoai thanh</label>
+                <div class="check" id="check4"></div>
+            </div>
+            <div class="form-group">
+                <label for="tenKhachHang">Phi ship</label>
+                <input type="text" id="phiShip" readonly>
+            </div>
+            <input type="button" value="Dat Hang" id="datHang">
+        </form>
+    </div>
+    <script>
+        document.getElementById('loaiHang').addEventListener('click',function() {
+            document.getElementById('donGia').value = document.getElementById('loaiHang').value;
+            document.getElementById('tong').value = Number(document.getElementById('loaiHang').value)*Number(document.getElementById('soLuong').value)+Number(document.querySelector('input[name = noiNhan]:checked').value)
+        });
+        document.querySelectorAll('input[name=noiNhan]').forEach(function(item,index) {
+            item.addEventListener('click',function() {
+                document.getElementById('phiShip').value = item.value;
+                document.getElementById('tong').value = Number(document.getElementById('loaiHang').value)*Number(document.getElementById('soLuong').value)+Number(document.querySelector('input[name = noiNhan]:checked').value)
+            });
+        });
+        document.getElementById('soLuong').addEventListener('change',function() {
+            document.getElementById('tong').value = Number(document.getElementById('loaiHang').value)*Number(document.getElementById('soLuong').value)+Number(document.querySelector('input[name = noiNhan]:checked').value)
+        });
+
+        document.getElementById('datHang').addEventListener('click',function() {
+        let check1 ;
+        let check2 ;
+        let check3 ;
+        let check4 ;
+            if (document.getElementById('name').value.trim()=="") {
+                document.getElementById('check1').innerText = "Khong duoc de trong ten"
+                check1 = false;
+            }
+            else{
+                document.getElementById('check1').innerText = "";
+                check1 = true;
+            }
+            if (document.getElementById('soLuong').value.trim()=="") {
+                document.getElementById('check3').innerText = "Khong duoc de trong so Luong"
+                check3 = false
+            }
+            else{
+                document.getElementById('check3').innerText = "";
+                check3 = true;
+            }
+            if (document.getElementById('loaiHang').value == 0) {
+                document.getElementById('check2').innerText = "Vui long chon loai hang"
+                check2 = false
+            }
+            else{
+                document.getElementById('check2').innerText = "";
+                check2 = true;
+            }
+            if (document.querySelector('input[name = noiNhan]').check == false) {
+                document.getElementById('check4').innerText = "Vui long Chon noi nhan"
+                check4 = false;
+            }
+            else{
+                document.getElementById('check4').innerText = "";
+                check4 = true;
+            }
+            if (check1 == true && check2 == true && check3 == true && check4 == true) {
+                alert('Dat hang thanh cong');
+            }
+            else alert('dat hang khong thanh cong');
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div class="form-group">
+            <label for="loaiSp">Loai San Pham</label>
+            <select name="loaiSp" id="loaiSp">
+                <option value="10000">Loai 1</option>
+                <option value="20000">Loai 2</option>
+                <option value="30000">Loai 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="soLuong">So Luong</label>
+            <input type="number" id="soLuong">
+        </div>
+        <div class="form-group">
+            <h3>Địa chỉ</h3>
+            <input type="radio" name="diaChi" id="noiThanh" value="0" checked>
+            <label for="noiThanh">Nội thành</label>
+            <input type="radio" name="diaChi" id="ngoaiThanh" value="50000">
+            <label for="ngoaiThanh">Ngoại thành</label>
+        </div>
+        <div class="form-group">
+            <label for="giaVC">Gia SP</label>
+            <input type="number" id="giaSp" readonly>
+        </div>
+        <div class="form-group">
+            <label for="giaVC">Gia vc</label>
+            <input type="number" id="giavC" readonly>
+        </div>
+        <div class="form-group">
+            <label for="tong">Tong</label>
+            <input type="number" id="tong" readonly>
+        </div>
+    </form>
+    <script>
+        let sum;
+        document.getElementById('loaiSp').addEventListener('change', function () {
+           sum = document.getElementById('giaSp').value = Number(document.getElementById('loaiSp').value)*Number(document.getElementById('soLuong').value)
+           document.getElementById('tong').value = Number( document.getElementById('giavC').value)+sum
+        });
+        document.getElementById('soLuong').addEventListener('input',function () {
+            sum = document.getElementById('giaSp').value = Number(document.getElementById('loaiSp').value)*Number(document.getElementById('soLuong').value)
+            document.getElementById('tong').value = Number( document.getElementById('giavC').value)+sum
+        })
+        document.querySelectorAll('input[name="diaChi"]').forEach(function (item,index) {
+            item.addEventListener('change', function () {
+                document.getElementById('giavC').value = item.value
+                document.getElementById('tong').value = Number( document.getElementById('giavC').value)+sum
+            });
+        });
+        document.getElementById('soLuong').addEventListener('change',function () {
+            if (Number(document.getElementById('soLuong').value)<1) {
+                alert('so luong ko dc nho hon 1');
+                document.getElementById('soLuong').value = 1;
+            }
+        })
+    </script>
+</body>
+
+</html>

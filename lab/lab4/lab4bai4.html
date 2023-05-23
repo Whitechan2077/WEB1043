@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container
+        {
+            display: flex;
+        }
+    </style>
+    <script>
+        let prd = [];
+        function product(namePro, dep, price, color) {
+            this.namePro = namePro;
+            this.dep = dep;
+            this.price = price;
+            this.color = color;
+        }
+        function input() {
+            let pd = new product();
+            let pdc = document.getElementsByClassName('value');
+            pd.namePro = pdc[0].value;
+            pd.dep = pdc[1].value;
+            pd.price = pdc[2].value;
+            pd.color = pdc[3].value;
+            console.log(pd);
+            prd.push(pd);
+        }
+        function output() {
+            console.log(prd);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <label for="">Tên sản phẩm</label>
+            <br>
+            <input class="value" type="text">
+            <br>
+            <label for="">Mô tả</label>
+            <br>
+            <input class="value" type="text">
+            <br>
+            <label for="">Đơn giá</label>
+            <br>
+            <input class="value" type="number">
+            <br>
+            <label for="">Màu sắc</label>
+            <br>
+            <input class="value" type="text">
+            <br>
+            <div class="out">
+                <div id="show">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <button onclick="input()">NHập sản </button>
+    <button onclick="output()">Xuat</button>
+</body>
+
+</html>

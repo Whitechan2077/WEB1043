@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function  Product_Catalog(name,model,cost,quality){
+            this.name = name;
+            this.model = model;
+            this.cost = cost;
+            this.quality = quality;
+        }
+        var pd1 = new Product_Catalog('BC','USA',6969,'JP');
+        var pd2 = new Product_Catalog('Tenga','USA',6969,'JP');
+        var pd3 = new Product_Catalog('Java','USA',6969,'JP');
+        var inventory = [pd1,pd2,pd3];
+        console.log(inventory[2].quality);
+        console.log(inventory[0]);
+        var pd4 = new Product_Catalog('BC2','USA',6969,'jp');
+        var pd5 = new Product_Catalog('bc3','usa','69','Jp');
+        inventory.push(pd4,pd5);
+        console.log(inventory);
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Js tiểu học</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function display() {
+            let numPro = document.getElementById('qty').value;
+            let pro = document.getElementById('pro');
+            let name = pro.getAttribute('name');
+            let price = pro.getAttribute('price');
+            let Amout = numPro * price;
+            document.getElementById('showAmout').innerText = Amout + ' $';
+            document.getElementById('showName').innerText = name;
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <label id="pro" price="1950" name="Ipron 9">Ipron 9</label>
+        <input type="number" id="qty" value="1">
+        <button onclick="display()">Show</button>
+        <h3>Name <span id="showName"></span></h3>
+        <h3>Amout <span id="showAmout"></span></h3>
+</body>
+</html>

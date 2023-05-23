@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div class="form-group">
+            <label for="user">Username</label>
+            <input type="text" id="Username">
+            <div id="check1"></div>
+        </div>
+        <div class="form-group">
+            <label for="user">Password</label>
+            <input type="password" id="Password">
+            <div id="check2"></div>
+        </div>
+        <div class="form-group">
+            <label for="user">Re Password</label>
+            <input type="password" id="Re-Password">
+            <div id="check3"></div>
+            <div id="check4"></div>
+        </div>
+        <input type="button" value="Dang Ki" id="reg">
+    </form>
+    <script>
+        let checkAcc = false;
+        let checkPass = false;
+        let checkRePass = false;
+        document.getElementById('Username').addEventListener('keyup', function () {
+
+            if (document.getElementById('Username').value.trim() == "") {
+                document.getElementById('check1').innerText = "Tên tài khoản không được để trống"
+                checkAcc = false;
+            }
+            else{ document.getElementById('check1').innerText = ""
+            checkAcc = true;
+        }
+        console.log(checkAcc);
+
+        });
+
+
+
+
+        document.getElementById('Password').addEventListener('keyup', function () {
+            if (document.getElementById('Password').value.trim() == "") {
+                document.getElementById('check2').innerText = "Mật khẩu không được để trống"
+                checkPass = false;
+            }
+            else{ document.getElementById('check2').innerText = "";
+            checkPass = true;}
+            console.log(checkPass);
+
+            if (document.getElementById('Password').value.length>8) {
+                document.getElementById('check2').innerText = "Mật khẩu quá mạnh"
+            }
+            else document.getElementById('check2').innerText = "Trung bình mật khẩu"
+            if (document.getElementById('Password').value.length<=3) {
+                document.getElementById('check2').innerText = "Quá Yếu"
+                console.log(document.getElementById('Password').value.length);
+            }
+            if (document.getElementById('Password').value.length == 0) {
+                document.getElementById('check2').innerText = "Mật khẩu không được để trống"
+                checkPass = false;
+            }
+        })
+
+        document.getElementById('Re-Password').addEventListener('keyup', function () {
+            if (document.getElementById('Password').value != document.getElementById('Re-Password').value) {
+                document.getElementById('check3').innerText = "Mật khẩu không được trùng nhau"
+                checkRePass = false;
+            }
+            else {document.getElementById('check3').innerText = "" ;checkRePass = true;}
+            console.log(checkRePass);
+
+            if (document.getElementById('Re-Password').value.trim() == "") {
+                document.getElementById('check4').innerText = "Mật khẩu không được để trống"
+                checkPass = false;
+            }
+            else{ document.getElementById('check4').innerText = "";
+            checkPass = true;}
+            console.log(checkPass);
+        });
+
+
+        document.getElementById('reg').addEventListener('click',function() {
+            if (checkAcc == true && checkPass==true && checkRePass==true) {
+                alert('Đăng kí thành công')
+            }
+            else alert('Đăng kí không thành công')
+        });
+    </script>
+</body>
+
+</html>

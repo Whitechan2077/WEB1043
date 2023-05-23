@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="cart.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="cart.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <div class="col">
+                <h3><span class="title">JEWELRY</span></h3>
+                <div class="body body1">
+                    <!-- <img src="img/Anh-gai-xinh-cap-2-3.jpg" alt=""> -->
+                </div>
+                <div class="foot">
+                    <div class="mount">
+                        <h3>Name: Silver necklace</h3>
+                        <div class="amout">
+                            <h3>Price: <span class="Price" gia="5000000"></span></h3>
+                            <h3>Amout: <span class="col-amout"></span> <span id="up" onclick="addCol(0)">+</span> <span
+                                    id="down" onclick="delCol(0)">-</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- <div class="Cart-btn" onclick="sumValue(0)">
+                        ĐẶT HÀNG NGAY
+                    </div> -->
+                </div>
+            </div>
+            <div class="col">
+                <h3><span class="title">JEWELRY</span></h3>
+                <div class="body body2" >
+                    <!-- <img src="img/Anh-gai-xinh-cap-2-3.jpg" alt=""> -->
+                </div>
+                <div class="foot">
+                    <div class="mount">
+                        <h3>Name: Silver necklace</h3>
+                        <div class="amout">
+                            <h3>Price: <span class="Price" gia="6000000"></span></h3>
+                            <h3>Amout: <span class="col-amout"></span> <span id="up" onclick="addCol(1)">+</span> <span
+                                    id="down" onclick="delCol(1)">-</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- <div class="Cart-btn" onclick="sumValue(1)">
+                        ĐẶT HÀNG NGAY
+                    </div> -->
+                </div>
+            </div>
+            <div class="col">
+                <h3><span class="title">JEWELRY</span></h3>
+                <div class="body body3">
+                    <!-- <img src="img/Anh-gai-xinh-cap-2-3.jpg" alt=""> -->
+                </div>
+                <div class="foot">
+                    <div class="mount">
+                        <h3>Name: Chinese ring</h3>
+                        <div class="amout">
+                            <h3>Price: <span class="Price" gia="8000000"></span></h3>
+                            <h3>Amout: <span class="col-amout"></span> <span id="up" onclick="addCol(2)">+</span> <span
+                                    id="down" onclick="delCol(2)">-</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- <div class="Cart-btn" onclick="sumValue(2)">
+                        ĐẶT HÀNG NGAY
+                    </div> -->
+                </div>
+            </div>
+            <div class="col">
+                <h3><span class="title">JEWELRY</span></h3>
+                <div class="body body4">
+                    <!-- <img src="img/Anh-gai-xinh-cap-2-3.jpg" alt=""> -->
+                </div>
+                <div class="foot">
+                    <div class="mount">
+                        <h3>Name: Diamond</h3>
+                        <div class="amout">
+                            <h3>Price: <span class="Price" gia="8000000"></span></h3>
+                            <h3>Amout: <span class="col-amout"></span> <span id="up" onclick="addCol(3)">+</span> <span
+                            id="down" onclick="delCol(3)">-</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- <div class="Cart-btn" onclick="sumValue(2)">
+                        ĐẶT HÀNG NGAY
+                    </div> -->
+                </div>
+            </div>
+            <div class="col">
+                <h3><span class="title">JEWELRY</span></h3>
+                <div class="body body5">
+                    <!-- <img src="img/Anh-gai-xinh-cap-2-3.jpg" alt=""> -->
+                </div>
+                <div class="foot">
+                    <div class="mount">
+                        <h3>Name: Bracelet</h3>
+                        <div class="amout">
+                            <h3>Price: <span class="Price" gia="8000000"></span></h3>
+                            <h3>Amout: <span class="col-amout"></span> <span id="up" onclick="addCol(4)">+</span> <span
+                                    id="down" onclick="delCol(4)">-</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- <div class="Cart-btn" onclick="sumValue(2)">
+                        ĐẶT HÀNG NGAY
+                    </div> -->
+                </div>
+            </div>
+            <div class="col">
+                <h3><span class="title">JEWELRY</span></h3>
+                <div class="body body6">
+                    <!-- <img src="img/Anh-gai-xinh-cap-2-3.jpg" alt=""> -->
+                </div>
+                <div class="foot">
+                    <div class="mount">
+                        <h3>Name: Necklace</h3>
+                        <div class="amout">
+                            <h3>Price: <span class="Price" gia="8000000"></span></h3>
+                            <h3>Amout: <span class="col-amout"></span> <span id="up" onclick="addCol(5)">+</span> <span
+                                    id="down" onclick="delCol(5)">-</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- <div class="Cart-btn" onclick="sumValue(2)">
+                        ĐẶT HÀNG NGAY
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+        <div id="cart-i4">
+            <h1>PURCHASE</h1>
+            <h3 id="exit" onclick="exitPu()">x</h3>
+            <div class="form-group">
+                <label for="">Full name</label>
+                <input type="text" id="n">
+            </div>
+            <div class="form-group">
+                <label for="">Address</label>
+                <input type="text" id="ad">
+            </div>
+            <div class="form-group">
+                <label for="">Delivery method</label>
+                <select id="ship">
+                    <option value="option1">Express delivery</option>
+                    <option value="option2">Fast delivery</option>
+                    <option value="option3">Normal delivery</option>
+                </select>
+            </div>
+            <h3>Total: <span id="pPrice">0</span></h3>
+            <div class="pbtn" onclick="allPrice()">
+                Purchase Confirmation
+            </div>
+        </div>
+        <div id="bill">
+            <h3><span id="exit-bill" onclick="exitBill()">X</span></h3>
+            <h1>BILL</h1>
+            <h4>Full name: <span id="fullname"></span></h4>
+            <h4>Address: <span id="adress"></span></h4>
+            <h4>Delivery method: <span id="shipping"></span> </h4>
+            <h4>Total: <span id="fullPrice"></span> </h4>
+
+        </div>
+        <div id="alert">
+            <h4><span id="exit-alert" onclick="exitAlert()">X</span></h4>
+            <h2>The number of items must be greater than 0</h2>
+        </div>
+        <div id="validator">
+            <h3><span id="exit-validator" onclick="exitVali()">X</span></h3>
+            <h2>FULL NAME, ADDRESS MUST NOT BE BLANK</h2>
+        </div>
+    </div>
+    <div class="tong">
+        <div class="show">
+            <h3>Total: <span id="sum">0</span></h3>
+        </div>
+        <div class="btn" onclick="sumValue()">Purchase</div>
+    </div>
+    <!-- <h1>Giỏ hàng của bạn</h1>
+    <div id="total-cart"> -->
+
+    </div>
+    </div>
+    <script>
+        hover();
+        let col = document.getElementsByClassName('col-amout');
+        for (let i = 0; i < col.length; i++) {
+            col[i].innerHTML = amout[i];
+        }
+        let price = document.getElementsByClassName('Price');
+        for (let i = 0; i < price.length; i++) {
+            // console.log(Number(price[i].getAttribute('gia'))*amout[i])
+            price[i].innerHTML = Number(price[i].getAttribute('gia')) + ' VND'
+        }
+    </script>
+</body>
+
+</html>

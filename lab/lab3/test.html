@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .img {
+            background-image: url(ganyu-birthday-art-genshinimpact.jpg);
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            padding: 0;
+            background-size: 100% 100%;
+            display: none;
+        }
+    </style>
+    <script>
+        function on() {
+            let c = document.getElementsByClassName('img');
+            console.log(c);
+            c[0].style.display = "block";
+            c[0].style.transform = "scale(0.9)";
+            let d = document.querySelector('button');
+            console.log(d);
+            d.setAttribute('onclick', 'off()');
+        }
+        function off() {
+            let c = document.getElementsByClassName('img');
+            console.log(c);
+            c[0].style.display = "none";
+            let d = document.querySelector('button');
+            d.setAttribute('onclick', 'on()');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="on()">Nhấp đi em</button>
+    <div class="img"></div>
+</body>
+
+</html>

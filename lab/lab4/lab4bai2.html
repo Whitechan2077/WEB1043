@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function Student(Name,diemToan,diemLy,diemHoa) {
+            this.Name = Name;
+            this.diemToan = diemToan;
+            this.diemLy = diemLy;
+            this.diemHoa = diemHoa;
+
+            this.diem = function () {
+                let diemTb = (diemHoa+diemLy+diemHoa)/3
+                if (diemTb >= 9) {
+                    return "xuat xac"
+                }
+                if (diemTb)> {
+                    
+                }
+            }
+
+            this.output = function () {
+                document.write('<h3>Họ và tên: ' + this.Name + '</h3>');
+                document.write('<h3>Điểm: ' + this.Mark + '</h3>');
+                document.write('<h3>Trạng thái: ' + this.diem() + '</h3>');
+            }
+        }
+        var st = new Student();
+
+        st.Name = prompt('nhap ten')
+        do{
+            st.diemToan = prompt('diem toan');
+        }while(st.diemToan>10)
+        do{
+            st.diemHoa = prompt('diem hoa');
+        }while(st.diemToan>10)
+        do{
+            st.diemLy = prompt('diem ly');
+        }while(st.diemToan>10)
+        st.output();
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Js tiểu học</div>
+</body>
+
+</html>

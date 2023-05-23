@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var c;
+        function openNew() {
+            c = window.open("https://www.google.com/", "Googole", "toolbar=yes,menubar=yes,width=500,height=500");
+            console.log(c)
+        }
+        function closeNew() {
+            c.close();
+        }
+
+        function check() {
+            if (c.closed()) {
+                alert('da dong');
+            }
+            else alert('con mo');
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="openNew()">Open</button>
+    <button onclick="closeNew()">Close</button>
+    <button onclick="check()">Check</button>
+</body>
+
+</html>

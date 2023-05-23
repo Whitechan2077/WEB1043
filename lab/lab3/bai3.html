@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .container {
+            margin: auto;
+            width: 500px;
+        }
+
+        .col {
+            display: flex;
+        }
+
+        .box {
+            background-image: url(ganyu-birthday-art-genshinimpact.jpg);
+            background-size: 100% 100%;
+            margin: 2px 2px;
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            background-color: whitesmoke;
+            padding: 27px;
+            border: 1px solid black;
+            box-shadow: 0px 1px 2px;
+            color: white;
+            font-size: 50px;
+            text-shadow: 3px 3px 3px black;
+            cursor: pointer;
+            user-select: none;
+        }
+        .box:hover
+        {
+           transform: scale(1.1);
+        }
+    </style>
+    <script>
+        var bieuthuc = '';
+        function toanTu(pt) {
+            bieuthuc += pt;// 8 + 5 +5 + 5
+        }
+        function toanHang(x) {
+            bieuthuc += x;
+        }
+        function thucHien() {
+            let c = eval(bieuthuc); 
+            alert(c);
+            bieuthuc = '';
+        }
+        function lamlai() {
+            bieuthuc = null;
+        }
+        // function swap(x) {
+        //     let a = Math.sqrt(x);
+        //     alert(a);
+        //     bieuthuc = null;
+        // }
+        
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Siêu máy tính</h1>
+        <div class="col">
+            <div class="box" onclick="toanHang(8)">8</div>
+            <div class="box" onclick="toanHang(7)">7</div>
+            <div class="box" onclick="toanHang(9)">9</div>
+            <div class="box" onclick="toanTu('+')">+</div>
+        </div>
+        <div class="col">
+            <div class="box" onclick="toanHang(4)">4</div>
+            <div class="box" onclick="toanHang(5)">5</div>
+            <div class="box" onclick="toanHang(6)">6</div>
+            <div class="box" onclick="toanTu('-')">-</div>
+        </div>
+        <div class="col">
+            <div class="box" onclick="toanHang(1)">1</div>
+            <div class="box" onclick="toanHang(2)">2</div>
+            <div class="box" onclick="toanHang(3)">3</div>
+            <div class="box" onclick="toanTu('*')">x</div>
+        </div>
+        <div class="col">
+            <div class="box" onclick="toanHang(0)">0</div>
+            <div class="box" onclick="lamlai()">C</div>
+            <div class="box" onclick="thucHien()">=</div>
+            <div class="box" onclick="toanTu('/')">:</div>
+        </div>
+    </div>
+</body>
+
+</html>
